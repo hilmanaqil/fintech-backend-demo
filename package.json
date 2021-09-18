@@ -1,0 +1,27 @@
+{
+  "name": "git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilmanaqil/fintech-backend-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hilmanaqil/fintech-backend-demo/issues"
+  },
+  "homepage": "https://github.com/hilmanaqil/fintech-backend-demo#readme",
+  "dependencies": {
+    "cor": "0.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-openid-connect": "^2.5.0",
+    "mysql": "^2.18.1"
+  }
+}
