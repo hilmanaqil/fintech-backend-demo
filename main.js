@@ -1,9 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const account = require("./account");
 const user = require("./user");
 
 server = express();
 server.use(express.json());
+server.use(cors());
 
 server.use(account.router);
 server.use(user.router);
