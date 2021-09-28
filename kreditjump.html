@@ -1,0 +1,57 @@
+<!-- Anuflora Systems  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="kreditjump.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title>NUS Money</title>
+
+  </head>
+  <body>
+    
+    
+    <h2> KreditJump </h2>
+    <img id="logo" src="chart.jpg" alt="chart">
+
+    <div class="container">
+      <h4>Your Balance</h4>
+      <h1 id="balance">$0.00</h1>
+
+      <div id = "pieDiv"></div
+      
+      <h3>Details</h3>
+      <ul id="list" class="list">
+        <!-- <li class="minus">
+          Cash <span>-$400</span><button class="delete-btn">x</button>
+        </li> -->
+      </ul>
+      
+        <h3>Login Details</h3>
+      <form id="form">
+        <div class="form-control">
+          <label for="userid">User ID</label>    
+          <input type="number" id="userid" placeholder="Enter userid..." />
+        </div>
+        <button id = "b1" class="btn">Login</button>
+        <button id = "b2" class="btn">Reset</button>
+        <div class="form-control">
+          <p id="reco" class="blinking"></p>
+        </div>
+       
+      </form>
+
+      
+
+      <script src="kreditjump.js"></script>
+
+      
+      
+    </div>
+
+    
+  </body>
+</html>
