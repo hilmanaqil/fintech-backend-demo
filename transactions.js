@@ -4,11 +4,11 @@ const database = require("./database");
 
 router = express.Router();
 
-router.get("/user/all", (request, response) => {
+router.get("/transactions/all", (request, response) => {
   // let users = data.get_all_users(); // somehow get the users;
   // response.send(users);
 
-  database.connection.query(`select * from user`, (errors, records) => {
+  database.connection.query(`select * from transactions`, (errors, records) => {
     if (errors) {
       console.log(errors);
       response.status(500).send("An error occurred in the backend");
@@ -18,13 +18,13 @@ router.get("/user/all", (request, response) => {
   });
 });
 
-router.get("/user/by-uid", (request, response) => {
+router.get("/transactions/by-uid", (request, response) => {
   // let user_id = request.query.user_id;
   // let user = data.get_user_by_user_id(user_id); // get a user based on user_id I get in the request.
   // response.send(user);
 
   database.connection.query(
-    `select * from user where user_id = '${request.query.user_id}'`,
+    `select * from transactions where user_id = '${request.query.user_id}'`,
     (errors, records) => {
       if (errors) {
         console.log(errors);
@@ -46,10 +46,10 @@ router.post("/user/add", (request, response) => {
   // // Step 3: Return the success response
   // response.send("Added successfully!");
   
-  //let user = request.body;
+  let user = request.body;
   database.connection.query(
-    `insert into user (user_id, first_name, last_name, email, username, password, identification_id, contact_no) 
-    values (${request.query.user_id}, ${request.query.first_name}, ${request.query.last_name}, ${request.query.email}, ${request.query.username}, ${request.query.password}, ${request.query.identification_id}, ${request.query.contact_no})`,
+    `insert into user (user_id, first_name, last_name, email, username, password, identification_id, contact_no)
+    values ('${user.user_id}', '${user.first_name}', '${user.last_name}', '${user.email}', '${user.username}', '${user.password}', '${user.identification_id}', '${user.contact_no}'`,
     (errors, records) => {
       if (errors) {
         console.log(errors);

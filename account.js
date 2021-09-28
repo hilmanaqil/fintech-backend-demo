@@ -1,8 +1,39 @@
 const express = require("express");
 const data = require("./data");
+const database = require("./database");
 
 router = express.Router();
 
+//Get all account
+router.get('/account/all', (req, res) => {
+  database.connection.query(`SELECT * from account`, (err, results) => {
+      if (err) {
+      console.log(err);
+      } else {
+          res.send(results);
+      }
+      });
+})
+
+//Get account by user_id
+router.get('/account', (req, res) => {
+  let user_id = req.query.user_id;
+  database.connection.query(`SELECT * from account WHERE user_id = ${user_id}`, (err, results) => {
+      if (err) {
+          console.log(err);
+          } else {
+              if (results.length !== 0) {
+                  res.send(results);
+                  console.log(`User ${user_id}'s account displayed.`)
+              } else {
+                  res.send("No such account.")
+              }
+              
+          }
+  })
+})
+
+/* 
 router.get("/account/all", (request, response) => {
     // Step 1 - Get all the accounts
     let accounts = data.get_all_accounts();
@@ -27,7 +58,7 @@ router.get("/account/all", (request, response) => {
     data.add_account(account);
     response.send("Added successfully!");
   });
-
+*/
   module.exports = { router };
   
   
