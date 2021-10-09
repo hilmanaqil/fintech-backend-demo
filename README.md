@@ -9,3 +9,5 @@
 3. To access backend, `node main.js`
 4. To view frontend, open *kreditjump.html*
 5. Enter *Erny*, *Jane*, or *Valaree* to see credit scores and transactions
+
+edit
