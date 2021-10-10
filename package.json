@@ -1,7 +1,7 @@
 {
   "name": "git",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. Clone the code to your local by the command\t`git clone https://github.com/hilmanaqil/fintech-backend-demo.git`",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
