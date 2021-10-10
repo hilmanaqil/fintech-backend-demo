@@ -8,40 +8,37 @@
     <link rel="stylesheet" href="kreditjump.css" />
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src='node_modules/web3/dist/web3.min.js'></script>
-
     <title>NUS Money</title>
   </head>
   <body>
     <h2> KreditJump </h2>
     <img id="logo" src="chart.jpg" alt="chart">
     <div class="container">
+      <h5 id="error"></h2> 
       <h3 id="customerlogin">Customer Login</h3>
       <form id="form">
         <div class="form-control" id="formc">
-          <label for="custname">Customer Name</label>    
-          <input type="text" id="custname" placeholder="Enter customer name..." />
+          <label for="username">Username</label>    
+          <input type="text" id="username" placeholder="Enter username..." />
+          <label for="password">Password</label>    
+          <input type="password" id="password" placeholder="Enter password..." />
         </div>
         <button id = "b1" class="btn">Submit</button>
-        <h2 id="error"></h2>  
+        <h2 id="welcome"></h2>
         <h4 id="yourcs"></h4>
         <h1 id="csvalue"></h1>
 
         <h5 id="overview"></h5>
         <h5 id="piechart"></h5>
+
         <h3 id="details"></h3>
         <ul id="list" class="list"></ul>
-        <button id = "b2" class="btn">Logout</button>
-        <div class="form-control">
-          <p id="reco" class="blinking"></p>
-        </div>
-       
+        <a id="b3" class="btn" href="rewards.html">Rewards</a>
+        <button id = "b2" class="btn">Logout</button>       
       </form>
-      <button id = "balance" class="btn">Token Balance</button>
     
     </div>
 
-    <script type='module' src="kreditjump.js"></script>
-
+    <script src="project1 copy.js"></script>
   </body>
 </html>

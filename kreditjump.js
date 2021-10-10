@@ -1,4 +1,7 @@
+import {getBalance, getCurrentAccount} from "./metamask.js";
+
 // (c) Anuflora Systems 
+
 const creditscore = document.getElementById('csvalue');
 const list = document.getElementById('list');
 const form = document.getElementById('form');
@@ -129,7 +132,7 @@ function updatecsvalue(username) {
 
 
 
-function updateValues() {
+function updateValues(TransactionData) {
   // => same as callback function
   // forEach and map is almost the same but map create a new array while forEach doesnt
   const ontime_transaction = TransactionData.filter(tran => tran.ontime=="1");
@@ -212,9 +215,9 @@ function mydata(data){
     document.getElementById("b1").style.display="none";
     document.getElementById("error").style.display="none";
     //TransactionData = TransactionDataAll.filter(tran => tran.customername.toUpperCase() == custname.value.toUpperCase());
-    TransactionData = data.filter(tran => tran.customername.toUpperCase() == custname.value.toUpperCase());    
+    let TransactionData = data.filter(tran => tran.customername.toUpperCase() == custname.value.toUpperCase());    
     TransactionData.forEach(addTransactionDOM);
-    updateValues();
+    updateValues(TransactionData);
     updatecsvalue(custname.value.toUpperCase());
     //updatecsvalue(custname.value.toUpperCase()); 
     //hide elements not needed after log-in
@@ -232,3 +235,12 @@ init();
 //form.addEventListener('submit', filterTransaction);
 b1.addEventListener('click',filterTransaction);
 b2.addEventListener('click',init);  //no need to call init. when no event handler it will reload/referesh the page
+
+
+//Token balance button
+const tokenBalanceBtn = document.getElementById("balance").onclick = async () => {
+  // const account = await getCurrentAccount()
+  // console.log(account)
+  let balance = await getBalance()
+  console.log(`Balance is: ${balance/(10**18)}`)
+}
