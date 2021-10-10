@@ -132,7 +132,7 @@ function updatecsvalue(username) {
 
 
 
-function updateValues() {
+function updateValues(TransactionData) {
   // => same as callback function
   // forEach and map is almost the same but map create a new array while forEach doesnt
   const ontime_transaction = TransactionData.filter(tran => tran.ontime=="1");
@@ -215,9 +215,9 @@ function mydata(data){
     document.getElementById("b1").style.display="none";
     document.getElementById("error").style.display="none";
     //TransactionData = TransactionDataAll.filter(tran => tran.customername.toUpperCase() == custname.value.toUpperCase());
-    TransactionData = data.filter(tran => tran.customername.toUpperCase() == custname.value.toUpperCase());    
+    let TransactionData = data.filter(tran => tran.customername.toUpperCase() == custname.value.toUpperCase());    
     TransactionData.forEach(addTransactionDOM);
-    updateValues();
+    updateValues(TransactionData);
     updatecsvalue(custname.value.toUpperCase());
     //updatecsvalue(custname.value.toUpperCase()); 
     //hide elements not needed after log-in

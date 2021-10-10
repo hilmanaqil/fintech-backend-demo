@@ -1,3 +1,12 @@
+//Token balance button
+const ERC20_Bal = document.getElementById("balance")
+const tokenBalanceBtn = document.getElementById("balanceBtn").onclick = async () => {
+  // const account = await getCurrentAccount()
+  // console.log(account)
+  let balance = await getBalance()
+  console.log(`Balance is: ${balance/(10**18)}`)
+  ERC20_Bal.innerHTML = `Your ERC20 tokens balance is ${balance/(10**18)}`
+}
 
 async function loadWeb3() {
     if (window.ethereum) {
