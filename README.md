@@ -13,5 +13,5 @@
 
 If you do not have a database to link with:
 1. Clone the code to your local by the command	`git clone https://github.com/hilmanaqil/fintech-backend-demo.git`
-2. To view frontend, open *project1.html*.
+2. To view frontend, open *login.html*.
 3. Enter *jk123" for both username and password to see credit scores and transactions.
