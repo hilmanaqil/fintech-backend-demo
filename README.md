@@ -10,7 +10,8 @@
 5. Enter *Erny*, *Jane*, or *Valaree* to see credit scores and transactions
 
 
+
 If you do not have a database to link with:
 1. Clone the code to your local by the command	`git clone https://github.com/hilmanaqil/fintech-backend-demo.git`
-4. To view frontend, open *project1.html*.
-5. Enter *jk123" for both username and password to see credit scores and transactions.
+2. To view frontend, open *project1.html*.
+3. Enter *jk123" for both username and password to see credit scores and transactions.
